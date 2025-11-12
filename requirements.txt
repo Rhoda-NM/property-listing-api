@@ -1,0 +1,14 @@
+flask
+flask-restful
+flask-sqlalchemy
+flask-migrate
+flask-jwt-extended
+marshmallow
+marshmallow-sqlalchemy
+python-dotenv
+werkzeug
+psycopg2-binary
+pytest
+pytest-flask
+pytest-cov
+requests
