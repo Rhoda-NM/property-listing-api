@@ -1,9 +1,9 @@
 flask
-flask-restful
+flask-restx
 flask-sqlalchemy
 flask-migrate
 flask-jwt-extended
-marshmallow
+flask-marshmallow
 marshmallow-sqlalchemy
 python-dotenv
 werkzeug
