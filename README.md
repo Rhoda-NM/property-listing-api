@@ -52,3 +52,46 @@ It demonstrates clean REST architecture, authentication, file uploads, geo-searc
 
 ## 📂 Project Structure
 
+property-listing-api/
+│── app/
+│ ├── models/
+│ ├── resources/
+│ ├── schemas/
+│ ├── extensions.py
+│ ├── config.py
+│ └── init.py
+│── uploads/ # image storage in dev
+│── requirements.txt
+│── run.py
+│── README.md
+└── .env
+
+
+---
+
+## 📘 API Documentation (Swagger)
+
+Once the server is running:
+
+👉 http://127.0.0.1:5000/docs  
+
+All endpoints are fully documented using Flask-RESTX.
+
+---
+
+## 🛠️ Installation & Setup
+
+### Create virtual environment:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+
+🧑‍💻 Author
+
+Rhoda Njeri Muya
+Full-Stack Developer | React + Flask
+Kenya 🇰🇪
+https://github.com/Rhoda-NM
