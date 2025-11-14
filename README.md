@@ -1,5 +1,5 @@
 # 🏡 Property Listing API — Flask RESTX + Docker + Postgres
-<p align="center"> <img src="banner.png" width="100%" alt="Property Listing API Banner"/> </p>
+<p align="center"> <img src="Banner.png" width="100%" alt="Property Listing API Banner"/> </p>
 
 A production-ready real estate backend built with:
 
