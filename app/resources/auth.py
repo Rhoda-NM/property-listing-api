@@ -11,19 +11,19 @@ auth_ns = Namespace('Auth', description='Authentication operations')
 user_schema = UserSchema()
 
 #swagger models
-register_model = auth_ns.model('Register', {
-    'name': fields.String(required=True, description='Full name'),
-    'email': fields.String(required=True, description='Email address'),
-    'password': fields.String(required=True, description='Password'),
-    'phone': fields.String(description='Phone number'),
-    'is_agent': fields.Boolean(description='Is the user an agent'),
-    'bio': fields.String(description='Short biography'),
-    'company': fields.String(description='Company name'),
+register_model = auth_ns.model("Register", {
+    "name": fields.String(required=True, example="Agent Alice"),
+    "email": fields.String(required=True, example="alice.agent@example.com"),
+    "password": fields.String(required=True, example="password123"),
+    "phone": fields.String(example="+254700000001"),
+    "is_agent": fields.Boolean(default=False, example=True),
+    "bio": fields.String(example="Specialist in apartments around Nairobi."),
+    "company": fields.String(example="Nairobi Homes Ltd"),
 })
 
-login_model = auth_ns.model('Login', {
-    'email': fields.String(required=True),
-    'password': fields.String(required=True),
+login_model = auth_ns.model("Login", {
+    "email": fields.String(required=True, example="alice.agent@example.com"),
+    "password": fields.String(required=True, example="password123"),
 })
 
 @auth_ns.route('/register')

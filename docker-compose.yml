@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:15
+    container_name: property_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-property_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-property_pass}
+      POSTGRES_DB: ${POSTGRES_DB:-property_db}
+    ports:
+      - "5433:5433"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+  web:
+    build: .
+    container_name: property_api
+    restart: unless-stopped
+    env_file:
+      - .env
+    depends_on:
+      - db
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./uploads:/app/uploads
+
+volumes:
+  db_data:

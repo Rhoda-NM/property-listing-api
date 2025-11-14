@@ -4,6 +4,7 @@ from flask_restx import Api
 
 from .config import Config
 from .extensions import db, ma, migrate, jwt
+from .errors import register_error_handlers
 
 # Global RESTX API instance (Swagger UI at /docs)
 api = Api(
@@ -11,6 +12,7 @@ api = Api(
     version="1.0",
     description="Listings • Agents • Geo Search • Messages • Bookings",
     doc="/docs",  # Swagger UI path
+    default_mediatype="application/json",
 )
 
 
@@ -30,6 +32,9 @@ def create_app():
 
     # Attach RESTX API to app
     api.init_app(app)
+
+    # Global Error Handlers
+    register_error_handlers(app)
 
     # Import namespaces AFTER api.init_app
     from .resources.health import health_ns

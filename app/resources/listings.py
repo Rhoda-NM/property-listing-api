@@ -43,19 +43,20 @@ def current_user():
     uid = get_jwt_identity()
     return User.query.get(uid) if uid else None
 
-listing_in = listings_ns.model('ListingIn', {
-    'title': fields.String(required=True, description='Title of the listing'),
-    'description': fields.String(description='Description of the listing'),
-    'price': fields.Float(required=True, description='Price of the listing'),
-    'bedrooms': fields.Integer(description='Number of bedrooms'),
-    'bathrooms': fields.Integer(description='Number of bathrooms'),
-    'property_type': fields.String(description='Type of property'),
-    'status': fields.String(description='Status of the listing'),
-    'address': fields.String(description='Address of the property'),
-    'city': fields.String(description='City where the property is located'),
-    'lat': fields.Float(description='Latitude of the property location'),
-    'lng': fields.Float(description='Longitude of the property location'),
+listing_in = listings_ns.model("ListingIn", {
+    "title": fields.String(required=True, example="Modern 2BR Apartment in Kilimani"),
+    "description": fields.String(example="Spacious 2BR with balcony, close to Yaya Centre."),
+    "price": fields.Float(required=True, example=80000),
+    "bedrooms": fields.Integer(example=2),
+    "bathrooms": fields.Integer(example=2),
+    "property_type": fields.String(example="apartment"),
+    "status": fields.String(example="active"),
+    "address": fields.String(example="Argwings Kodhek Road"),
+    "city": fields.String(example="Nairobi"),
+    "lat": fields.Float(example=-1.2921),
+    "lng": fields.Float(example=36.7831),
 })
+
 
 R_EARTH_KM = 6371.0088
 
